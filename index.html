@@ -2,21 +2,46 @@
 <html>
   <head>
     <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/main.js"></script>
   </head>
 
   <body>
     <div class="tileset">
-        <div class="wrapper">
-            <div class="option"><input type="checkbox" id="checkbox-1" value="1">
-            <label class="option-label" for="checkbox-1">Test</label></div>
-            <div class="option"><input type="checkbox" id="checkbox-2" value="2">
-            <label class="option-label" for="checkbox-2">Test</label></div>
-            <div class="option"><input type="checkbox" id="checkbox-3" value="3">
-            <label class="option-label" for="checkbox-3">Test</label></div>
-            <div class="option"><input type="checkbox" id="checkbox-4" value="4">
-            <label class="option-label" for="checkbox-4">Test</label></div>
+        <div class="wrapper row-2">
+            <div class="option">
+              <input type="checkbox" id="checkbox-1">
+              <label class="option-label" for="checkbox-1">Test</label>
+            </div>
+            <div class="option">
+              <input type="checkbox" id="checkbox-2">
+              <label class="option-label" for="checkbox-2">Test</label>
+            </div>
+            <div class="option">
+              <input type="checkbox" id="checkbox-3">
+              <label class="option-label" for="checkbox-3">Test</label>
+            </div>
+            <div class="option">
+              <input type="checkbox" id="checkbox-4">
+              <label class="option-label" for="checkbox-4">Test</label>
+            </div>
         </div>
     </div>
   </body>
-  
+
+  <div class="actions">
+    <form>
+      <fieldset>
+        <input onChange="rChange(event);" type="radio" name="use-row" value="use-2" class="row-radio" id="row-2" checked>
+        <label for="row-2">Use 2 Rows</label>
+        <input onChange="rChange(event);" type="radio" name="use-row" value="use-3" class="row-radio" id="row-3">
+        <label for="row-3">Use 3 Rows</label>
+        <input onChange="rChange(event);" type="radio" name="use-row" value="use-4" class="row-radio" id="row-4">
+        <label for="row-4">Use 4 Rows</label>
+      </fieldset>
+    </form>
+    <button onclick="addTile(event)" class="tileset-button">Add another tile</button>
+    <button onclick="deleteLastTile(event)" class="tileset-button">Remove last tile</button>
+    <button onclick="purgeTiles(event)" class="tileset-button"><span class="danger">Purge all tiles</span></button>
+  </div>
+
 </html>
