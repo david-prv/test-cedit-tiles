@@ -73,7 +73,6 @@ function toggleRadio() {
     /* Toggle */
     cleaned_options.forEach(function(opt) {
         let input = opt.childNodes[1];
-        console.log(input);
         if(input.type == "checkbox") {
             input.type="radio";
             input.name="radio-" + id;
