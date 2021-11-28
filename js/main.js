@@ -1,3 +1,18 @@
+function getCleanOptions() {
+    /* Init */
+    let option_elements = document.getElementsByClassName("wrapper")[0].childNodes;
+    let cleaned_options = [];
+
+    /* Cleanout */
+    Array.prototype.forEach.call(option_elements, function(option_el) {
+        if(option_el.tagName !== undefined) {
+            cleaned_options.push(option_el);
+        }
+    });
+
+    return cleaned_options;
+}
+
 function addTile() {
     /* Init */
     let wrapper = document.getElementsByClassName("wrapper")[0];
@@ -27,15 +42,7 @@ function addTile() {
 function deleteLastTile() {
     /* Init */
     let wrapper = document.getElementsByClassName("wrapper")[0];
-    let option_elements = document.getElementsByClassName("wrapper")[0].childNodes;
-    let cleaned_options = [];
-
-    /* Cleanout */
-    Array.prototype.forEach.call(option_elements, function(option_el) {
-        if(option_el.tagName !== undefined) {
-            cleaned_options.push(option_el);
-        }
-    });
+    let cleaned_options = getCleanOptions();
 
     /* Removal */
     let last_option = cleaned_options[cleaned_options.length - 1];
@@ -56,4 +63,25 @@ function rChange(event) {
     /* Manipulate rows */
     let wrapper = document.getElementsByClassName("wrapper")[0];
     wrapper.classList = "wrapper " + event.target.id;
+}
+
+function toggleRadio() {
+    /* Init */
+    let id = Date.now();
+    let cleaned_options = getCleanOptions();
+
+    /* Toggle */
+    cleaned_options.forEach(function(opt) {
+        let input = opt.childNodes[1];
+        console.log(input);
+        if(input.type == "checkbox") {
+            input.type="radio";
+            input.name="radio-" + id;
+            document.getElementById("radio-status").innerHTML = "(ON)";
+        } else {
+            input.type="checkbox";
+            input.name="";
+            document.getElementById("radio-status").innerHTML = "(OFF)";
+        }
+    });
 }
