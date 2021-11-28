@@ -13,10 +13,21 @@ body {
 
 .wrapper {
     display: grid;
-    grid-template-columns: auto auto;
     grid-gap: 10px;
     background-color: #2196F3;
     padding: 10px;
+}
+
+.row-2 {
+    grid-template-columns: auto auto;
+}
+
+.row-3 {
+    grid-template-columns: auto auto auto;
+}
+
+.row-4 {
+    grid-template-columns: auto auto auto auto;
 }
 
 .wrapper > .option {
@@ -37,4 +48,33 @@ body {
 
 .option input[type=checkbox]:checked + .option-label{
     background-color: green;
+}
+
+.actions {
+    position: absolute;
+    bottom: 50px;
+    width: 70%;
+    background-color: yellow;
+    border: 1px solid black;
+    text-align: center;
+    padding: 20px;
+}
+
+.actions button {
+    height: 50px;
+    width: 200px;
+    margin-top: 20px;
+}
+
+.actions input[type=radio] {
+    float: left;
+}
+
+.actions label{
+    float: left;
+}
+
+.danger {
+    font-weight: bolder;
+    color: red;
 }
