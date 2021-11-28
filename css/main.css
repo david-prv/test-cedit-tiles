@@ -42,11 +42,16 @@ body {
     height: 100px;
 }
 
-.option input[type=checkbox]{
+.option input[type=checkbox], .option input[type=radio]{
     display: none;
 }
 
-.option input[type=checkbox]:checked + .option-label{
+.option input[type=label]{
+    display: none;
+}
+
+.option input[type=checkbox]:checked + .option-label,
+.option input[type=radio]:checked + .option-label {
     background-color: green;
 }
 
