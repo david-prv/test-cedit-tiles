@@ -33,6 +33,8 @@ body {
 .wrapper > .option {
     text-align: center;
     font-size: 30px;
+    overflow: hidden;
+    color: white;
 }
 
 .option-label {
