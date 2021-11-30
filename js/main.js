@@ -1,3 +1,5 @@
+var current_type = "checkbox";
+
 function getCleanOptions() {
     /* Init */
     let option_elements = document.getElementsByClassName("wrapper")[0].childNodes;
@@ -25,7 +27,7 @@ function addTile() {
     new_option.classList.add("option");
 
     /* Checkbox */
-    new_checkbox.type = "checkbox";
+    new_checkbox.type = current_type;
     new_checkbox.id = "checkbox-" + id;
 
     /* Label */
@@ -73,6 +75,7 @@ function toggleRadio() {
     /* Toggle */
     cleaned_options.forEach(function(opt) {
         let input = opt.childNodes[1];
+        current_type = (current_type == "checkbox") ? "radio" : "checkbox";
         if(input.type == "checkbox") {
             input.type="radio";
             input.name="radio-" + id;
